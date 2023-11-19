@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenTECH - Connexion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" href="static/favicon.png">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            background-image: url('static/logoGreenTECH.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .login {
+            width: 400px;
+            background-color: #ffffff;
+            box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logo img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .input-container label {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .input-container input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        /* Ajustement de la taille des boîtes de saisie */
+        .input-container input[type="password"] {
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .msg {
+            color: red;
+            margin: 10px 0;
+        }
+
+        .input-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .input-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .register-link {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="static/logoGreenTECH.png" alt="Logo de GreenTECH">
+    </div>
+    <div class="login">
+        <h1>Connexion</h1>
+        <form action="{{ url_for('login') }}" method="post">
+            <div class="input-container">
+                <label for="username"><i class="fas fa-user"></i></label>
+                <input type="text" name="username" id="username" placeholder="Nom d'utilisateur" required>
+            </div>
+            <div class="input-container">
+                <label for="password"><i class="fas fa-lock"></i></label>
+                <input type="password" name="password" id="password" placeholder="Mot de passe" required>
+            </div>
+            <div class="msg">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            {% if category == 'error' %}
+                                <div class="alert alert-danger">
+                                    {{ message }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="input-container">
+                <input type="submit" value="Connexion">
+            </div>
+        </form>
+        <div class="register-link">
+            Pas encore inscrit ? <a href="{{ url_for('register') }}">Inscrivez-vous ici</a>
+        </div>
+    </div>
+</body>
+</html>

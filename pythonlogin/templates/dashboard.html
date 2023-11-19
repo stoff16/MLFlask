@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Tableau de Bord</h1>
+    </header>
+    <main>
+        <section class="user-dashboard">
+            <h2>Tableau de Bord Utilisateur</h2>
+            <div id="user-chart"></div>
+            <button id="load-user-data">Charger Données Utilisateur</button>
+        </section>
+        <section class="admin-dashboard">
+            <h2>Tableau de Bord Administrateur</h2>
+            <div id="admin-chart"></div>
+            <button id="load-admin-data">Charger Données Administrateur</button>
+        </section>
+    </main>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

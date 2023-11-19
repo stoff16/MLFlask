@@ -1,0 +1,126 @@
+{% extends 'home.html' %}
+{% block title %}Tableau de bord{% endblock %}
+{% block content %}
+<style>
+    /* Ajoutez votre CSS personnalisé pour le tableau de bord ici */
+
+    .dashboard {
+        margin: 20px;
+    }
+
+    .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dashboard-title {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .user-info {
+        text-align: right;
+    }
+
+    .user-info h3 {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .user-info p {
+        color: #888;
+    }
+
+    .dashboard-content {
+        margin-top: 20px;
+    }
+
+    .dashboard-card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .card-title {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .card-description {
+        color: #888;
+    }
+
+    .dashboard-card:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Ajoutez un style pour le conteneur du graphique */
+    .chart-container {
+        position: relative;
+        height: 300px; /* Ajustez la hauteur selon vos besoins */
+    }
+<!DOCTYPE html>
+<!-- saved from url=(0136)https://www.datanovia.com/en/wp-content/uploads/dn-tutorials/highcharter/figures/035-highcharter-graphical-parameters-theme-monokai.html -->
+<html class="embedded" style="width: 100%; height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style>body{background-color:white;}</style>
+<script src="./htmlwidgets.js.téléchargement"></script>
+<script src="./jquery.min.js(1).téléchargement"></script>
+<script src="./proj4.js.téléchargement"></script>
+<link href="./motion.css" rel="stylesheet">
+<script src="./highcharts.js.téléchargement"></script>
+<script src="./highcharts-3d.js.téléchargement"></script>
+<script src="./highcharts-more.js.téléchargement"></script>
+<script src="./stock.js.téléchargement"></script>
+<script src="./map.js.téléchargement"></script>
+<script src="./annotations.js.téléchargement"></script>
+<script src="./boost.js.téléchargement"></script>
+<script src="./data.js.téléchargement"></script>
+<script src="./drag-panes.js.téléchargement"></script>
+<script src="./drilldown.js.téléchargement"></script>
+<script src="./item-series.js.téléchargement"></script>
+<script src="./offline-exporting.js.téléchargement"></script>
+<script src="./overlapping-datalabels.js.téléchargement"></script>
+<script src="./exporting.js.téléchargement"></script>
+<script src="./export-data.js.téléchargement"></script>
+<script src="./funnel.js.téléchargement"></script>
+<script src="./heatmap.js.téléchargement"></script>
+<script src="./treemap.js.téléchargement"></script>
+<script src="./sankey.js.téléchargement"></script>
+<script src="./organization.js.téléchargement"></script>
+<script src="./solid-gauge.js.téléchargement"></script>
+<script src="./streamgraph.js.téléchargement"></script>
+<script src="./sunburst.js.téléchargement"></script>
+<script src="./vector.js.téléchargement"></script>
+<script src="./wordcloud.js.téléchargement"></script>
+<script src="./xrange.js.téléchargement"></script>
+<script src="./tilemap.js.téléchargement"></script>
+<script src="./venn.js.téléchargement"></script>
+<script src="./gantt.js.téléchargement"></script>
+<script src="./timeline.js.téléchargement"></script>
+<script src="./parallel-coordinates.js.téléchargement"></script>
+<script src="./bullet.js.téléchargement"></script>
+<script src="./coloraxis.js.téléchargement"></script>
+<script src="./dumbbell.js.téléchargement"></script>
+<script src="./motion.js.téléchargement"></script>
+<script src="./reset.js.téléchargement"></script>
+<script src="./highchart.js.téléchargement"></script>
+<script src="./pym.v1.min.js.téléchargement"></script>
+  <title>highchart</title>
+<link href="./css(3)" rel="stylesheet" type="text/css"><link href="./css(4)" rel="stylesheet" type="text/css"><link href="./css(6)" rel="stylesheet" type="text/css"></head>
+<body style="margin: 0px; padding: 0px; overflow: hidden; width: 100%; height: 100%;">
+<div id="htmlwidget_container" style="position: absolute; inset: 0px;">
+  <div id="htmlwidget-d5b874853e136403defe" style="width: 100%; height: 100%; overflow: hidden;" class="highchart html-widget html-widget-static-bound" data-highcharts-chart="0"><div id="highcharts-deaq4di-0" dir="ltr" class="highcharts-container " style="position: relative; overflow: hidden; width: 734px; height: 450px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: Inconsolata; color: rgb(162, 163, 156);"><svg version="1.1" class="highcharts-root" style="font-family:Inconsolata;font-size:12px;color:#A2A39C;fill:#A2A39C;" xmlns="http://www.w3.org/2000/svg" width="734" height="450" viewBox="0 0 734 450"><desc>Created with Highcharts 8.0.0</desc><defs><clippath id="highcharts-deaq4di-1-"><rect x="0" y="0" width="663" height="386" fill="none"></rect></clippath><clippath id="highcharts-deaq4di-7-"><rect x="0" y="0" width="663" height="386" fill="none"></rect></clippath><clippath id="highcharts-deaq4di-8-"><rect x="61" y="10" width="663" height="386" fill="none"></rect></clippath></defs><rect fill="#272822" class="highcharts-background" x="0" y="0" width="734" height="450" rx="0" ry="0"></rect><rect fill="none" class="highcharts-plot-background" x="61" y="10" width="663" height="386"></rect><g class="highcharts-pane-group" data-z-index="0"></g><g class="highcharts-grid highcharts-xaxis-grid" data-z-index="1"><path fill="none" stroke="#A2A39C" stroke-width="1" stroke-dasharray="1,3" data-z-index="1" class="highcharts-grid-line" d="M 193.5 10 L 193.5 396" opacity="1"></path><path fill="none" stroke="#A2A39C" stroke-width="1" stroke-dasharray="1,3" data-z-index="1" class="highcharts-grid-line" d="M 325.5 10 L 325.5 396" opacity="1"></path><path fill="none" stroke="#A2A39C" stroke-width="1" stroke-dasharray="1,3" data-z-index="1" class="highcharts-grid-line" d="M 458.5 10 L 458.5 396" opacity="1"></path><path fill="none" stroke="#A2A39C" stroke-width="1" stroke-dasharray="1,3" data-z-index="1" class="highcharts-grid-line" d="M 590.5 10 L 590.5 396" opacity="1"></path><path fill="none" stroke="#A2A39C" stroke-width="1" stroke-dasharray="1,3" data-z-index="1" class="highcharts-grid-line" d="M 724.5 10 L 724.5 396" opacity="1"></path><path fill="none" stroke="#A2A39C" stroke-width="1" stroke-dasharray="1,3" data-z-index="1" class="highcharts-grid-line" d="M 60.5 10 L 60.5 396" opacity="1"></path></g><g class="highcharts-grid highcharts-yaxis-grid" data-z-index="1"><path fill="none" stroke="#A2A39C" stroke-width="1" stroke-dasharray="1,3" data-z-index="1" class="highcharts-grid-line" d="M 61 396.5 L 724 396.5" opacity="1"></path><path fill="none" stroke="#A2A39C" stroke-width="1" stroke-dasharray="1,3" data-z-index="1" class="highcharts-grid-line" d="M 61 319.5 L 724 319.5" opacity="1"></path><path fill="none" stroke="#A2A39C" stroke-width="1" stroke-dasharray="1,3" data-z-index="1" class="highcharts-grid-line" d="M 61 242.5 L 724 242.5" opacity="1"></path><path fill="none" stroke="#A2A39C" stroke-width="1" stroke-dasharray="1,3" data-z-index="1" class="highcharts-grid-line" d="M 61 164.5 L 724 164.5" opacity="1"></path><path fill="none" stroke="#A2A39C" stroke-width="1" stroke-dasharray="1,3" data-z-index="1" class="highcharts-grid-line" d="M 61 87.5 L 724 87.5" opacity="1"></path><path fill="none" stroke="#A2A39C" stroke-width="1" stroke-dasharray="1,3" data-z-index="1" class="highcharts-grid-line" d="M 61 9.5 L 724 9.5" opacity="1"></path></g><rect fill="none" class="highcharts-plot-border" data-z-index="1" x="61" y="10" width="663" height="386"></rect><g class="highcharts-axis highcharts-xaxis" data-z-index="2"><path fill="none" class="highcharts-tick" stroke="#A2A39C" stroke-width="1" d="M 193.5 396 L 193.5 406" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#A2A39C" stroke-width="1" d="M 325.5 396 L 325.5 406" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#A2A39C" stroke-width="1" d="M 458.5 396 L 458.5 406" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#A2A39C" stroke-width="1" d="M 590.5 396 L 590.5 406" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#A2A39C" stroke-width="1" d="M 724.5 396 L 724.5 406" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#A2A39C" stroke-width="1" d="M 60.5 396 L 60.5 406" opacity="1"></path><text x="392.5" data-z-index="7" text-anchor="middle" transform="translate(0,0)" class="highcharts-axis-title" style="color:#666666;fill:#666666;" y="433"><tspan>name</tspan></text><path fill="none" class="highcharts-axis-line" stroke="#A2A39C" stroke-width="1" data-z-index="7" d="M 61 396.5 L 724 396.5"></path></g><g class="highcharts-axis highcharts-yaxis" data-z-index="2"><path fill="none" class="highcharts-tick" stroke="#A2A39C" stroke-width="1" d="M 61 396.5 L 51 396.5" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#A2A39C" stroke-width="1" d="M 61 319.5 L 51 319.5" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#A2A39C" stroke-width="1" d="M 61 242.5 L 51 242.5" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#A2A39C" stroke-width="1" d="M 61 164.5 L 51 164.5" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#A2A39C" stroke-width="1" d="M 61 87.5 L 51 87.5" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#A2A39C" stroke-width="1" d="M 61 9.5 L 51 9.5" opacity="1"></path><text x="24.5" data-z-index="7" text-anchor="middle" transform="translate(0,0) rotate(270 24.5 203)" class="highcharts-axis-title" style="color:#666666;fill:#666666;" y="203"><tspan>y</tspan></text><path fill="none" class="highcharts-axis-line" data-z-index="7" d="M 61 10 L 61 396"></path></g><g class="highcharts-series-group" data-z-index="3"><g data-z-index="0.1" class="highcharts-series highcharts-series-0 highcharts-column-series highcharts-tracker" transform="translate(61,10) scale(1 1)" clip-path="url(#highcharts-deaq4di-7-)"><rect x="33.5" y="232.5" width="64" height="154" fill="steelblue" stroke="#ffffff" stroke-width="1" opacity="1" class="highcharts-point"></rect><rect x="166.5" y="86.5" width="64" height="300" fill="steelblue" stroke="#ffffff" stroke-width="1" opacity="1" class="highcharts-point"></rect><rect x="299.5" y="60.5" width="64" height="326" fill="steelblue" stroke="#ffffff" stroke-width="1" opacity="1" class="highcharts-point"></rect><rect x="431.5" y="164.5" width="64" height="222" fill="steelblue" stroke="#ffffff" stroke-width="1" opacity="1" class="highcharts-point"></rect><rect x="564.5" y="287.5" width="64" height="99" fill="steelblue" stroke="#ffffff" stroke-width="1" opacity="1" class="highcharts-point"></rect></g><g data-z-index="0.1" class="highcharts-markers highcharts-series-0 highcharts-column-series" transform="translate(61,10) scale(1 1)" clip-path="none"></g></g><text x="10" text-anchor="start" class="highcharts-title" data-z-index="4" style="color:#A2A39C;font-size:18px;fill:#A2A39C;" y="24"></text><text x="10" text-anchor="start" class="highcharts-subtitle" data-z-index="4" style="color:#A2A39C;fill:#A2A39C;" y="24"></text><text x="10" text-anchor="start" class="highcharts-caption" data-z-index="4" style="color:#666666;fill:#666666;" y="447"></text><g class="highcharts-legend" data-z-index="7"><rect fill="none" class="highcharts-legend-box" rx="0" ry="0" x="0" y="0" width="8" height="8" visibility="hidden"></rect><g data-z-index="1"><g></g></g></g><g class="highcharts-axis-labels highcharts-xaxis-labels" data-z-index="7"><text x="127.3" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="415" opacity="1">grape</text><text x="259.9" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="415" opacity="1">olive</text><text x="392.5" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="415" opacity="1">guava</text><text x="525.1" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="415" opacity="1">nut</text><text x="657.7" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="415" opacity="1">pear</text></g><g class="highcharts-axis-labels highcharts-yaxis-labels" data-z-index="7"><text x="46" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="401" opacity="1">0</text><text x="46" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="324" opacity="1">5</text><text x="46" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="247" opacity="1">10</text><text x="46" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="169" opacity="1">15</text><text x="46" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="92" opacity="1">20</text><text x="46" style="color:#666666;cursor:default;font-size:11px;fill:#666666;" text-anchor="end" transform="translate(0,0)" y="15" opacity="1">25</text></g><g class="highcharts-control-points" data-z-index="99" clip-path="url(#highcharts-deaq4di-8-)"></g></svg></div></div>
+  <script>HTMLWidgets.pymChild = new pym.Child();HTMLWidgets.addPostRenderHandler(function(){
+                                setTimeout(function(){HTMLWidgets.pymChild.sendHeight();},100);
+                            });</script>
+</div>
+<script type="application/json" data-for="htmlwidget-d5b874853e136403defe">{"x":{"hc_opts":{"title":{"text":null},"yAxis":{"title":{"text":"y"},"type":"linear"},"credits":{"enabled":false},"exporting":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":false},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}}},"series":[{"group":"group","data":[{"y":10,"name":"grape"},{"y":19.4,"name":"olive"},{"y":21.1,"name":"guava"},{"y":14.4,"name":"nut"},{"y":6.4,"name":"pear"}],"type":"column","color":"steelblue"}],"xAxis":{"type":"category","title":{"text":"name"},"categories":null}},"theme":{"colors":["#F92672","#66D9EF","#A6E22E","#A6E22E"],"chart":{"backgroundColor":"#272822","style":{"fontFamily":"Inconsolata","color":"#A2A39C"}},"title":{"style":{"color":"#A2A39C"},"align":"left"},"subtitle":{"style":{"color":"#A2A39C"},"align":"left"},"legend":{"align":"right","verticalAlign":"bottom","itemStyle":{"fontWeight":"normal","color":"#A2A39C"}},"xAxis":{"gridLineDashStyle":"Dot","gridLineWidth":1,"gridLineColor":"#A2A39C","lineColor":"#A2A39C","minorGridLineColor":"#A2A39C","tickColor":"#A2A39C","tickWidth":1},"yAxis":{"gridLineDashStyle":"Dot","gridLineColor":"#A2A39C","lineColor":"#A2A39C","minorGridLineColor":"#A2A39C","tickColor":"#A2A39C","tickWidth":1}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":["Roboto","Roboto+Condensed","Inconsolata"],"debug":false},"evals":[],"jsHooks":[]}</script>
+<script type="application/htmlwidget-sizing" data-for="htmlwidget-d5b874853e136403defe">{"viewer":{"width":"100%","height":350,"padding":0,"fill":true},"browser":{"width":"100%","height":500,"padding":0,"fill":true}}</script>
+
+
+</body></html>
+{% endblock %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr"> <!-- Remplacez "fr" par le code de langue de votre choix -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choisir la Langue</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Incluez ici vos liens vers des fichiers CSS et JavaScript supplémentaires si nécessaire -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Accueil</a></li>
+                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+                <li><a href="{{ url_for('language') }}">Langue</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Choisir la Langue</h1>
+        <form action="{{ url_for('language') }}" method="post">
+            <label for="language">Langue préférée :</label>
+            <select name="language" id="language">
+                {% for lang_code, lang_name in get_languages() %}
+                    <option value="{{ lang_code }}" {% if lang_code == session['language'] %}selected{% endif %}>{{ lang_name }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Changer de Langue">
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; {{ current_year }} Votre Entreprise. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

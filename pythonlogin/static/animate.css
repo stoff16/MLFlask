@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Votre Page avec Animate.css</title>
+    <!-- Inclure Animate.css via un CDN (Content Delivery Network) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css">
+    <style>
+        /* Ajoutez ici vos propres styles ou modifications */
+    </style>
+</head>
+<body>
+    <!-- Contenu de votre page -->
+    <h1>Titre</h1>
+    <p>Contenu de votre page</p>
+</body>
+</html>

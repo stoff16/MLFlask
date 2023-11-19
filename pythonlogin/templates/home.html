@@ -1,0 +1,231 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue sur GreenTECH</title>
+    <!-- Liens vers les styles -->
+	<img src="C:/Users/HP/Documents/flask_app/backend/pythonlogin/static/depositphotos.jpg" alt="Description de l'image">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static/animate.css">
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="static/script.js"></script>
+    <style>
+        /* Styles CSS intégrés spécifiques à cette page */
+        body {
+            /* Votre image de fond */
+            background-image: url("static/capture.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            /* Appliquer un flou à l'arrière-plan */
+            backdrop-filter: blur(8px); /* Ajustez la valeur pour obtenir le flou souhaité */
+        }
+
+        main {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        header {
+            background-color: #fff; 
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: black;
+            color: #333; 
+            font-weight: bold;
+        }
+		.hero {
+            /* Votre image de fond */
+            background-image: url("static/capture.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            position: relative;
+            /* Appliquer un flou à l'image de fond */
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("static/capture.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            filter: blur(8px); /* Ajustez la valeur pour obtenir le flou souhaité */
+            z-index: -1;
+        }
+		
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+			    <div class="links">
+			        <a href="{{ url_for('login') }}">Login</a>
+			        <a href="{{ url_for('register') }}" class="active">s'enregistrer</a>
+                    <a href="/">Accueil</a></li>
+                    <a href="{{ url_for('about') }}">À propos</a></li>
+                <!-- Ajout des liens -->
+				    <a href="{{ url_for('contact') }}">Contact</a></li>
+                    <a href="{{ url_for('profile') }}">Profil</a></li>
+                    <a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+					<a href="{{ url_for('predict') }}">Résultat de prédiction</a></li>
+					<a href="{{ url_for('language') }}">Language</a></li>
+                    <a href="{{ url_for('settings') }}">Paramètres</a></li>
+				    <a href="{{ url_for('login') }}">Déconnexion</a></li>
+				</div>
+            </ul>
+            <!-- Vos icônes de réseaux sociaux -->
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Bienvenue, {{ username }} !</h1>
+            <p>Bienvenue sur GreenTECH, votre plateforme pour une agriculture durable grâce à l'apprentissage automatique.</p>
+            <p>Découvrez comment la technologie de pointe transforme l'agriculture, la rendant plus productive et respectueuse de l'environnement que jamais.</p>
+        </section>
+        <section>
+            <h2 class="animated-title">L'apprentissage automatique en agriculture</h2>
+            <article class="animated-card">
+                <h3 class="animated-subtitle">Agriculture intelligente : un avenir plus vert</h3>
+                <p>Apprenez comment l'apprentissage automatique et les appareils IoT optimisent la gestion des cultures, de l'irrigation et de l'utilisation des ressources.</p>
+            </article>
+            <article class="animated-card">
+                <h3 class="animated-subtitle">Agriculture de précision</h3>
+                <p>Explorez l'utilisation d'algorithmes d'apprentissage automatique pour analyser les données provenant de capteurs et de satellites, permettant une prise de décision précise en agriculture.</p>
+            </article>
+        </section>
+
+        <section class="profile">
+            <h2>Votre profil</h2>
+            <table>
+                <tr>
+                    <th>Nom d'utilisateur :</th>
+                    <td>{{ username }}</td>
+                </tr>
+                <tr>
+                    <th>Email :</th>
+                    <td>{{ email }}</td>
+                </tr>
+            </table>
+        </section>
+		...
+        <!-- Carrousel d'images avec les classes d'animations -->
+        <section class="image-carousel animated-carousel">
+            <div class="carousel">
+                <img src="static/how-to-develop-machine-learning-applications-for-business-featured.jpg" alt="Agriculture moderne 1" class="carousel-img">
+                <img src="static/agriculture-intelligence-artificielle.jpg" alt="Agriculture moderne 2" class="carousel-img">
+                <img src="static/téléchargement.png" alt="Agriculture moderne 3" class="carousel-img">
+            </div>
+        </section>
+        <!-- Vidéo d'introduction -->
+        <section class="video-intro">
+            <h2>Découvrez notre plateforme</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+        </section>
+        <!-- Témoignages de clients -->
+        <section class="testimonials">
+            <h2>Témoignages de nos clients</h2>
+            <div class="testimonial">
+                <p>"GreenTECH a révolutionné la façon dont je gère ma ferme. Les résultats sont incroyables!"</p>
+                <p><strong>John Doe</strong>, Agriculteur</p>
+            </div>
+            <div class="testimonial">
+                <p>"L'avenir de l'agriculture est ici. Je ne pourrais pas être plus satisfait de GreenTECH!"</p>
+                <p><strong>Jane Smith</strong>, Exploitant agricole</p>
+            </div>
+        </section>
+        <!-- Section Blog avec les classes d'animations -->
+        <section class="blog">
+            <h2 class="animated-title">Articles récents</h2>
+            <article class="blog-post animated-card">
+                <h3 class="animated-subtitle">Comment l'IA transforme l'agriculture</h3>
+                <p>Découvrez comment l'intelligence artificielle révolutionne l'agriculture moderne.</p>
+                <a href="/blog/article-1">Lire l'article</a>
+            </article>
+            <article class="blog-post animated-card">
+                <h3 class="animated-subtitle">Optimiser l'irrigation avec la technologie</h3>
+                <p>Des conseils pour améliorer l'efficacité de l'irrigation en utilisant la technologie.</p>
+                <a href="/blog/article-2">Lire l'article</a>
+            </article>
+        </section>
+        <!-- Carte interactive -->
+        <section class="interactive-map">
+            <h2>Exemples dans le monde</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d165875.8468610481!2d-73.9901574462672!3d40.7306102693298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2588f0461b227b%3A0xf10ef3750b763dc9!2sNew%20York%2C%20%C3%89tats-Unis!5e0!3m2!1sfr!2sfr!4v1616781909596!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+        <!-- Réseaux sociaux -->
+        <section class="social-media">
+            <h2>Restez connectés</h2>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/YourPage" target="_blank"><img src="static/facebook-icon.png" alt="Facebook"></a>
+                <a href="https://twitter.com/YourTwitter" target="_blank"><img src="static/twitter-icon.png" alt="Twitter"></a>
+                <a href="https://www.instagram.com/YourInstagram" target="_blank"><img src="static/instagram-icon.png" alt="Instagram"></a>
+            </div>
+        </section>
+            ...
+    </main>
+	
+    <footer>
+        <p class="animated fadeIn">&copy; 2023 GreenTECH</p>
+    </footer>
+    <button id="scrollToTop">Retour en haut</button> <!-- Bouton de défilement vers le haut -->
+    <!-- Formulaire de recherche avec la classe d'animation -->
+    <form id="searchForm" class="search-form animated-fadeIn">
+        <input type="text" id="searchInput" placeholder="Rechercher...">
+        <button type="submit">Rechercher</button>
+    </form>
+</body>
+</html>

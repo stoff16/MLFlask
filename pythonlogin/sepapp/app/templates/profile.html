@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>Accueil - GreenTECH</title>
+    <style>
+        body {
+            background-image: url('static/capture.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #fff;
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Style pour la barre d'outils verte foncée */
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .auth-link {
+            text-decoration: none;
+            color: #fff;
+            margin-left: 10px;
+        }
+
+        /* Style pour les onglets */
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+            padding: 10px 0;
+        }
+
+        .tab {
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .tab.active {
+            background-color: #555;
+        }
+
+        /* Style pour les contenus des onglets */
+        .profile-form, .history-content, .settings-content, .personal-stats-content, .quick-links-content, .notifications-content {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Style pour le contenu principal */
+        .content {
+            padding: 20px;
+        }
+
+        /* Style pour le pied de page */
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="toolbar">
+            <a href="/" class="logo">GreenTECH</a>
+            <ul class="nav-links">
+                <li><a href="/dashboard">Tableau de bord</a></li>
+                <li><a href="/profile">Profil</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/logout" class="auth-link">Déconnexion</a></li> <!-- Ajout du lien de déconnexion -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Image d'en-tête -->
+    <section class="header-image">
+        <!-- Ajoutez ici votre image d'en-tête en plein écran -->
+    </section>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h2 class="welcome-heading">Bienvenue, {{ username }} !</h2>
+        <p class="welcome-message">Bienvenue sur GreenTECH, votre plateforme pour une agriculture durable grâce à l'apprentissage automatique.</p>
+        <p class="intro-message">Découvrez comment la technologie de pointe transforme l'agriculture, la rendant plus productive et respectueuse de l'environnement que jamais.</p>
+        
+        <!-- Section de prédiction -->
+        <section class="prediction-section">
+            <h3>Effectuez une prédiction</h3>
+            <p>Entrez les caractéristiques de votre sol et obtenez des prévisions précises pour vos cultures.</p>
+            <form>
+                <!-- Formulaire pour saisir les données de prédiction -->
+            </form>
+        </section>
+        
+        <!-- Graphiques interactifs -->
+        <section class="interactive-charts">
+            <h3>Visualisez vos données</h3>
+            <p>Explorez les tendances de croissance, les données historiques et les prévisions à l'aide de graphiques interactifs.</p>
+            <!-- Ajoutez ici vos graphiques interactifs -->
+        </section>
+
+        <!-- Résultats de prédiction -->
+        <section class="prediction-results">
+            <h3>Résultats de la prédiction</h3>
+            <p>Découvrez les résultats de votre prédiction de manière conviviale et facile à comprendre.</p>
+            <!-- Affichez ici les résultats de la prédiction, par exemple sous forme de graphiques ou de cartes -->
+        </section>
+
+        <!-- Conseils agricoles -->
+        <section class="agricultural-tips">
+            <h3>Conseils pour votre agriculture</h3>
+            <p>Recevez des conseils et des recommandations basés sur les prédictions pour optimiser vos cultures.</p>
+            <!-- Affichez ici les conseils agricoles -->
+        </section>
+
+        <!-- Actualités agricoles -->
+        <section class="agricultural-news">
+            <h3>Dernières actualités agricoles</h3>
+            <p>Tenez-vous informé des dernières actualités et mises à jour liées à l'agriculture durable.</p>
+            <a href="/blog" class="cta-button">Voir le Blog</a>
+        </section>
+
+        <!-- Témoignages -->
+        <section class="testimonials">
+            <h3>Témoignages de nos utilisateurs</h3>
+            <div class="testimonial">
+                <p>"Grâce à GreenTECH, j'ai pu augmenter la productivité de mes cultures tout en réduisant mon empreinte environnementale. C'est un outil essentiel pour tout agriculteur."</p>
+                <p><strong>John Doe</strong>, Agriculteur</p>
+            </div>
+
+            <div class="testimonial">
+                <p>"Je recommande GreenTECH à tous les agriculteurs. Cela a changé la donne pour moi, et je suis reconnaissant pour cette technologie avancée."</p>
+                <p><strong>Jane Smith</strong>, Agricultrice</p>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Pied de page (Footer) -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contactez-nous</h3>
+                <p>Adresse : 123 Rue de l'Agriculture Durable, Ville Verte</p>
+                <p>Téléphone : +242 06-678-2844</p>
+                <p>Email : info@greentech-agri.com</p>
+            </div>
+            <div class="footer-links">
+                <h3>Liens Utiles</h3>
+                <ul>
+                    <li><a href="/dashboard">Tableau de bord</a></li>
+                    <li><a href="/profile">Profil</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="legal-info">
+                <h3>Informations Légales</h3>
+                <ul>
+                    <a href="{{ url_for('politique_confidentialite') }}">Politique de Confidentialité</a>
+                    <li><a href="/terms">Termes et Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

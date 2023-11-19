@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- Utilisation de polices locales avec une police de secours -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <link href="fallback-font.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Utilisation d'FontAwesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Autres métadonnées utiles -->
+    <meta property="og:title" content="Inscription sur le site" />
+    <meta property="og:description" content="Rejoignez notre communauté dès aujourd'hui !" />
+    <meta property="og:image" content="https://www.lateleagricole.net/wp-content/uploads/2021/01/agriculture-nuisibles-invasions-limiter-1024x683.jpg" />
+    <meta property="og:url" content="https://example.com/register" />
+    <!-- Favicon pour l'onglet du navigateur -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            background-image: url('https://www.robots-et-compagnie.com/wp-content/uploads/2021/06/agriculture-et-elevage-optimiser-la-gestion-avec-l-intelligence-artificielle-1280x640.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(70%);
+            position: relative;
+            z-index: -1;
+            width: 100%;
+        }
+
+        .register {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        /* Définir la largeur fixe pour tous les champs d'entrée */
+        .input-container input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            box-sizing: border-box; /* Assurez-vous que la largeur inclut le rembourrage et la bordure */
+        }
+
+        /* Autres styles inchangés */
+    </style>
+</head>
+<body>
+    <div class="register">
+        <h1>Register</h1>
+        <form action="{{ url_for('register') }}" method="post" autocomplete="off">
+            <div class="input-container">
+                <label for="firstname"><i class="fas fa-user icon"></i> Prénom</label>
+                <input type="text" name="firstname" id="firstname" placeholder="Prénom" required>
+            </div>
+            <div class="input-container">
+                <label for="lastname"><i class="fas fa-user icon"></i> Nom</label>
+                <input type="text" name="lastname" id="lastname" placeholder="Nom" required>
+            </div>
+			<div class="input-container">
+                <label for="dob"><i class="fas fa-calendar icon"></i> Date de naissance</label>
+                <input type="date" name="dob" id="dob" required>
+            </div>
+            <div class="input-container">
+                <label for="username"><i class="fas fa-user icon"></i> Nom d'utilisateur</label>
+                <input type="text" name="username" id="username" placeholder="Nom d'utilisateur" required>
+            </div>
+            <div class="input-container">
+                <label for="password"><i class="fas fa-lock icon"></i> Mot de passe</label>
+                <input type="password" name="password" id="password" placeholder="Mot de passe" required>
+            </div>
+            <div class="input-container">
+                <label for="email"><i class="fas fa-envelope icon"></i> Email</label>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="msg">{{ msg }}</div>
+            <div class="input-container">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+

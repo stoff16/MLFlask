@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Paramètres - GreenTECH</title>
+    <style>
+        /* Styles CSS internes pour cette page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            /* Ajoutez l'image de fond ici */
+            background-image: url('static/facets-of-data-analytics.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #444;
+        }
+
+        .success-message {
+            color: green;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Paramètres</h1>
+    </header>
+
+    <div class="container">
+        <h2>Modifier vos paramètres</h2>
+
+        <form id="settings-form">
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur :</label>
+                <input type="text" id="username" name="username" placeholder="Votre nom d'utilisateur" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Adresse e-mail :</label>
+                <input type="email" id="email" name="email" placeholder="Votre adresse e-mail" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Nouveau mot de passe :</label>
+                <input type="password" id="password" name="password" placeholder="Nouveau mot de passe">
+            </div>
+
+            <button type="submit" class="btn">Enregistrer les modifications</button>
+        </form>
+        <p class="success-message" id="success-message">Modifications enregistrées avec succès !</p>
+    </div>
+
+    <script>
+        const settingsForm = document.getElementById('settings-form');
+        const successMessage = document.getElementById('success-message');
+
+        settingsForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Récupérer les données du formulaire
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Exemple : Envoi des données au serveur via une requête Fetch API
+            fetch('/api/settings', {
+                method: 'POST',
+                body: JSON.stringify({ username, email, password }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    successMessage.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

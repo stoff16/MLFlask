@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>Blog - GreenTECH</title>
+    <style>
+        body {
+            background-image: url('static/capture.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <div class="logo">GreenTECH</div>
+        <ul class="nav-links">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/dashboard">Tableau de bord</a></li>
+            <li><a href="/profile">Profil</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <div class="auth">
+            {% if username %}
+                <a href="/logout" class="auth-link">Déconnexion</a>
+            {% else %}
+                <a href="/login" class="auth-link">Connexion</a>
+                <a href="/register" class="auth-link">Inscription</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- Contenu du blog -->
+    <div class="content blog-content">
+        <h2 class="page-heading">Blog</h2>
+
+        <!-- Article 1 -->
+        <article class="blog-article">
+            <img src="static/blog-post-1.jpg" alt="Article 1">
+            <h3 class="article-title">Titre de l'article 1</h3>
+            <p class="article-date">Publié le 15 octobre 2023</p>
+            <p class="article-summary">Un résumé court de l'article 1. Découvrez les dernières tendances en agriculture durable.</p>
+            <a href="/blog/article1" class="cta-button">Lire l'article</a>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="blog-article">
+            <img src="static/blog-post-2.jpg" alt="Article 2">
+            <h3 class="article-title">Titre de l'article 2</h3>
+            <p class="article-date">Publié le 10 octobre 2023</p>
+            <p class="article-summary">Un résumé court de l'article 2. Comment améliorer votre exploitation agricole avec GreenTECH.</p>
+            <a href="/blog/article2" class="cta-button">Lire l'article</a>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="blog-article">
+            <img src="static/blog-post-3.jpg" alt="Article 3">
+            <h3 class="article-title">Titre de l'article 3</h3>
+            <p class="article-date">Publié le 5 octobre 2023</p>
+            <p class="article-summary">Un résumé court de l'article 3. Les avantages de l'irrigation intelligente.</p>
+            <a href="/blog/article3" class="cta-button">Lire l'article</a>
+        </article>
+    </div>
+    
+    <!-- Pied de page (Footer) -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contactez-nous</h3>
+                <p>Adresse : 123 Rue de l'Agriculture Durable, Ville Verte</p>
+                <p>Téléphone : +242 06-678-2844</p>
+                <p>Email : info@greentech-agri.com</p>
+            </div>
+            <div class="footer-links">
+                <h3>Liens Utiles</h3>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/dashboard">Tableau de bord</a></li>
+                    <li><a href="/profile">Profil</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="legal-info">
+                <h3>Informations Légales</h3>
+                <ul>
+                    <li><a href="/privacy">Politique de Confidentialité</a></li>
+                    <li><a href="/terms">Termes et Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

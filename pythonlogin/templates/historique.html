@@ -1,0 +1,110 @@
+{% block title %}Historique{% endblock %}
+{% block content %}
+<style>
+    body {
+        background-image: url("static/capture.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        color: #fff;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .history-table {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        overflow-x: auto; /* Ajout d'un défilement horizontal en cas de contenu large */
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        color: #fff;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid #555;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #444;
+        color: #fff;
+    }
+
+    /* Ajout de styles pour une meilleure lisibilité des cellules de tableau */
+    tbody tr:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+    }
+
+    /* Ajout d'une animation de transition sur le survol des lignes du tableau */
+    tbody tr {
+        transition: background-color 0.3s ease;
+    }
+</style>
+
+<div class="header">
+    <h1>Historique des Prédictions</h1>
+</div>
+
+<div class="content">
+    <div class="history-table">
+        <h2>Vos Prédictions Récentes :</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Culture Prédite</th>
+                    <th>Résultat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2023-10-15</td>
+                    <td>Okra</td>
+                    <td>Succès</td>
+                </tr>
+                <tr>
+                    <td>2023-10-15</td>
+                    <td>Cassava</td>
+                    <td>Succès</td>
+                </tr>
+                <tr>
+                    <td>2023-10-10</td>
+                    <td>Bean</td>
+                    <td>Échec</td>
+                </tr>
+                <!-- Ajoutez plus de lignes pour afficher davantage d'éléments d'historique -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="footer">
+    &copy; {{ current_year | default(2023) }} GreenTECH
+</div>
+{% endblock %}
